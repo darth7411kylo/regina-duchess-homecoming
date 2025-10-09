@@ -120,3 +120,31 @@ h1 {
 #yesssssButton:hover {
     background-color: #caa70a;
 }
+
+/* Gallery styles */
+.gallery {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #3e1e68;
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.gallery-image {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f3f3f3;
+}
