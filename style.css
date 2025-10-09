@@ -1,0 +1,122 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*
+     * Use a pink gradient inspired by the movie "Mean Girls" for the page
+     * background. The start colour is a soft blush pink and it transitions
+     * into a vibrant cerise pink (hex codes come from the Mean Girls color
+     * scheme【338297440658279†L104-L138】). This creates an inviting theme
+     * that appeals to the feminine side while still leaving room for
+     * complementary accents later in the design.
+     */
+    background: linear-gradient(135deg, #fad4ec 0%, #e53d74 100%);
+    /* Base text colour is a deep plum to contrast against the light
+       background and tie into the purple accent from both themes. */
+    color: #3e1e68;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 3rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 480px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    /* Use the “Byzantine” purple from the Mean Girls palette【338297440658279†L124-L138】 */
+    color: #ac1ca5;
+}
+
+.instructions {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    /* Muted purple text for instructions */
+    color: #5c378a;
+}
+
+.poll {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.vote-button {
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.vote-button:hover {
+    /* Generic hover style will be overridden by individual buttons below */
+    opacity: 0.9;
+}
+
+.hidden {
+    display: none;
+}
+
+.results {
+    margin-top: 1rem;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-label {
+    font-weight: 600;
+}
+
+.result-count {
+    font-weight: 600;
+    /* Use the golden hue from Clash Royale palette【741482537223118†L44-L49】*/
+    color: #dbbd0c;
+}
+
+/* Individual button styles incorporating Clash Royale colours */
+
+/* "Yes" button uses the Royal Blue from Clash Royale (#1c16d2)【741482537223118†L44-L49】 */
+#yesButton {
+    background-color: #1c16d2;
+    color: #ffffff;
+}
+
+#yesButton:hover {
+    background-color: #3025d9;
+}
+
+/* "YESSSSS" button uses the gold from Clash Royale (#dbbd0c)【741482537223118†L44-L49】 */
+#yesssssButton {
+    background-color: #dbbd0c;
+    color: #3e1e68;
+}
+
+#yesssssButton:hover {
+    background-color: #caa70a;
+}

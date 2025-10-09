@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for Regina Duchess – Homecoming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vote for Regina Duchess<br><span class="subtitle">Homecoming Queen</span></h1>
+        <p class="instructions">Show your support by casting your vote! Choose between “Yes” and “YESSSSS”. Each vote counts – thanks for participating!</p>
+        <div class="poll">
+            <!-- Vote options -->
+            <button id="yesButton" class="vote-button">Yes</button>
+            <button id="yesssssButton" class="vote-button">YESSSSS</button>
+        </div>
+        <div id="thankYouMessage" class="hidden">
+            <p>Thank you for voting! Here are the current results:</p>
+        </div>
+        <div id="results" class="results hidden">
+            <div class="result-item">
+                <span class="result-label">Yes:</span>
+                <span id="yesCount" class="result-count">0</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">YESSSSS:</span>
+                <span id="yesssssCount" class="result-count">0</span>
+            </div>
+        </div>
+    </div>
+    <!-- Firebase SDKs: core and Firestore (compat versions for simplicity) -->
+    <!-- The firebaseConfig object will be defined in firebase-config.js -->
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+    <!-- Config file (to be filled out with your Firebase project credentials) -->
+    <script src="firebase-config.js"></script>
+    <!-- Our application logic -->
+    <script src="script.js"></script>
+</body>
+</html>
