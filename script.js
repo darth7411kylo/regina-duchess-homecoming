@@ -51,12 +51,11 @@ function displayResults(data) {
  * @param {string} option The option being voted on ('yes' or 'yesssss')
  */
 function vote(option) {
-    const hasVoted = localStorage.getItem('reginaHasVoted');
-    if (hasVoted) {
-        alert('You have already voted! Thank you for your support.');
-        return;
-    }
-    // Use Firestore FieldValue.increment to atomically increment the count
+    // This version of the vote handler allows repeated votes.  The
+    // localStorage check and disabling of the buttons have been removed
+    // so that the vote count will continue to increment beyond the
+    // previous limit.  We still use FieldValue.increment to update
+    // the selected field atomically in Firestore.
     const increment = firebase.firestore.FieldValue.increment(1);
     const update = {};
     if (option === 'yes') {
@@ -64,13 +63,7 @@ function vote(option) {
     } else if (option === 'yesssss') {
         update.yesssss = increment;
     }
-    pollDocRef.update(update).then(() => {
-        // After updating the count, mark the user as having voted
-        localStorage.setItem('reginaHasVoted', 'true');
-        // Disable buttons
-        yesButton.disabled = true;
-        yesssssButton.disabled = true;
-    }).catch((error) => {
+    pollDocRef.update(update).catch((error) => {
         console.error('Error updating vote:', error);
     });
 }
@@ -82,7 +75,6 @@ yesssssButton.addEventListener('click', () => vote('yesssss'));
 // On page load, initialize the poll document and set up a real-time listener
 window.addEventListener('DOMContentLoaded', () => {
     initializePollDocument();
-    const hasVoted = localStorage.getItem('reginaHasVoted');
     // Real-time listener for the poll document
     pollDocRef.onSnapshot((doc) => {
         if (doc.exists) {
@@ -92,9 +84,4 @@ window.addEventListener('DOMContentLoaded', () => {
     }, (error) => {
         console.error('Error listening to poll document:', error);
     });
-    // Disable buttons if the user has already voted
-    if (hasVoted) {
-        yesButton.disabled = true;
-        yesssssButton.disabled = true;
-    }
 });
