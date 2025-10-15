@@ -31,13 +31,14 @@ body {
 }
 
 .container {
-    /* Use a semi‑transparent white background so text and buttons remain
-       readable atop the photographic background. */
-    background: rgba(255, 255, 255, 0.85);
+    /* Remove the semi‑transparent background so only the text appears directly on
+       top of the photographs.  We still keep some padding and radius for
+       spacing around the content. */
+    background: transparent;
     border-radius: 12px;
     padding: 2rem 3rem;
-    /* Slightly stronger shadow for improved contrast against photos */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    /* Optional: remove the shadow since there is no background panel */
+    box-shadow: none;
     max-width: 480px;
     text-align: center;
     margin-top: 2rem;
