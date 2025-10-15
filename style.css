@@ -59,6 +59,9 @@ h1 {
     margin-top: 1rem;
     margin-bottom: 2rem;
     font-size: 1rem;
+    /* Use a playful handwritten font for the instructions to give a cute, fetch vibe.
+       Fallback to cursive if Comic Sans isn’t available. */
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     /* Muted purple text for instructions */
     color: #5c378a;
 }
@@ -138,22 +141,15 @@ h1 {
 
 /* Individual button styles incorporating Clash Royale colours */
 
-/* "Yes" button uses the Royal Blue from Clash Royale (#1c16d2)【741482537223118†L44-L49】 */
-#yesButton {
-    background-color: #1c16d2;
+/* Both vote buttons now use a unified pink inspired by the Mean Girls colour palette.
+   The hover state darkens the pink slightly for interactivity. */
+#yesButton,
+#yesssssButton {
+    background-color: #e53d74;
     color: #ffffff;
 }
 
-#yesButton:hover {
-    background-color: #3025d9;
-}
-
-/* "YESSSSS" button uses the gold from Clash Royale (#dbbd0c)【741482537223118†L44-L49】 */
-#yesssssButton {
-    background-color: #dbbd0c;
-    color: #3e1e68;
-}
-
+#yesButton:hover,
 #yesssssButton:hover {
-    background-color: #caa70a;
+    background-color: #d0295c;
 }
