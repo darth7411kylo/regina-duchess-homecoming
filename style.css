@@ -8,30 +8,39 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /*
-     * Use a pink gradient inspired by the movie "Mean Girls" for the page
-     * background. The start colour is a soft blush pink and it transitions
-     * into a vibrant cerise pink (hex codes come from the Mean Girls color
-     * scheme【338297440658279†L104-L138】). This creates an inviting theme
-     * that appeals to the feminine side while still leaving room for
-     * complementary accents later in the design.
+     * Set the homecoming photographs as the page background.  We layer the
+     * two photos side‑by‑side so both images are visible.  To ensure that
+     * the foreground content remains legible on top of busy photography
+     * we also apply a semi‑transparent white overlay using an inset box
+     * shadow on the container element (see below).  The images are set
+     * to cover half of the viewport width each, fill the full height and
+     * not repeat.
      */
-    background: linear-gradient(135deg, #fad4ec 0%, #e53d74 100%);
-    /* Base text colour is a deep plum to contrast against the light
-       background and tie into the purple accent from both themes. */
+    background-image: url('regina1.jpg'), url('regina2.jpg');
+    background-size: 50% 100%, 50% 100%;
+    background-position: left center, right center;
+    background-repeat: no-repeat;
     color: #3e1e68;
-    height: 100vh;
+    /* Allow content to flow vertically so the gallery and container stack
+       rather than being vertically centred. */
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .container {
-    background: #fff;
+    /* Use a semi‑transparent white background so text and buttons remain
+       readable atop the photographic background. */
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 12px;
     padding: 2rem 3rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* Slightly stronger shadow for improved contrast against photos */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     max-width: 480px;
     text-align: center;
+    margin-top: 2rem;
 }
 
 h1 {
@@ -99,28 +108,6 @@ h1 {
     color: #dbbd0c;
 }
 
-/* Individual button styles incorporating Clash Royale colours */
-
-/* "Yes" button uses the Royal Blue from Clash Royale (#1c16d2)【741482537223118†L44-L49】 */
-#yesButton {
-    background-color: #1c16d2;
-    color: #ffffff;
-}
-
-#yesButton:hover {
-    background-color: #3025d9;
-}
-
-/* "YESSSSS" button uses the gold from Clash Royale (#dbbd0c)【741482537223118†L44-L49】 */
-#yesssssButton {
-    background-color: #dbbd0c;
-    color: #3e1e68;
-}
-
-#yesssssButton:hover {
-    background-color: #caa70a;
-}
-
 /* Gallery styles */
 .gallery {
     margin-top: 2rem;
@@ -147,4 +134,26 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-color: #f3f3f3;
+}
+
+/* Individual button styles incorporating Clash Royale colours */
+
+/* "Yes" button uses the Royal Blue from Clash Royale (#1c16d2)【741482537223118†L44-L49】 */
+#yesButton {
+    background-color: #1c16d2;
+    color: #ffffff;
+}
+
+#yesButton:hover {
+    background-color: #3025d9;
+}
+
+/* "YESSSSS" button uses the gold from Clash Royale (#dbbd0c)【741482537223118†L44-L49】 */
+#yesssssButton {
+    background-color: #dbbd0c;
+    color: #3e1e68;
+}
+
+#yesssssButton:hover {
+    background-color: #caa70a;
 }
